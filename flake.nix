@@ -2,7 +2,7 @@
     description = "Test C++26 p2996 flake for development";
 
     inputs = {
-        nixpkgs.url  = github:alibabashack/nixpkgs/p2996-clang-22;
+        nixpkgs.url  = github:alibabashack/nixpkgs/p2996-clang-21;
         utils.url    = github:numtide/flake-utils;
     };
 
@@ -29,22 +29,24 @@
 
                 packages = [
                     llvm.clang-tools
-                    llvm.lldb
-                ] ++ pkgs.lib.optionals (stdenv.hostPlatform.isLinux) [
-                    pkgs.cntr
+                    #llvm.libcxx
+                    #llvm.clang
+                    #lldb
+                #] ++ pkgs.lib.optionals (stdenv.hostPlatform.isLinux) [
+                #    pkgs.cntr
                 ];
 
                 # For dev, we want to disable hardening.
-                hardeningDisable = [
-                    "bindnow"
-                    "format"
-                    "fortify"
-                    "fortify3"
-                    "pic"
-                    "relro"
-                    "stackprotector"
-                    "strictoverflow"
-                ];
+              #  hardeningDisable = [
+              #      "bindnow"
+              #      "format"
+              #      "fortify"
+              #      "fortify3"
+              #      "pic"
+              #      "relro"
+               #     "stackprotector"
+               #     "strictoverflow"
+              #  ];
 
                 # Ensure the locales point at the correct archive location.
                 LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";

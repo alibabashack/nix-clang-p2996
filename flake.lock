@@ -2,16 +2,16 @@
   "nodes": {
     "nixpkgs": {
       "locked": {
-        "lastModified": 1768938888,
-        "narHash": "sha256-8/664XeyCtpxWEFrZWOPwD7JeycSTNnmkXfIySFGcA0=",
+        "lastModified": 1768941692,
+        "narHash": "sha256-1mWhFXZrwo0bvuIOTrbaHCb1Iqgbzv0ywkb6hxLoO0A=",
         "owner": "alibabashack",
         "repo": "nixpkgs",
-        "rev": "5aa235cfd83ef106336e49a5b806098f455294e9",
+        "rev": "b6787ac0a50b22a9e57b049d9c24779cdbd6a663",
         "type": "github"
       },
       "original": {
         "owner": "alibabashack",
-        "ref": "p2996-clang-22",
+        "ref": "p2996-clang-21",
         "repo": "nixpkgs",
         "type": "github"
       }
