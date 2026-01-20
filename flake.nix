@@ -29,6 +29,7 @@
 
                 packages = [
                     llvm.clang-tools
+                    pkgs.simdjson # this thing supports c++26 p2996 reflection!
                     #llvm.libcxx
                     #llvm.clang
                     #lldb

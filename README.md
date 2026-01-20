@@ -7,5 +7,6 @@ I'm not going to bother setting up a CMake or anything since this is really just
 Anyway, you should be able to compile code just by setting the standard to `C++26` and adding `-freflection` once in the develop shell.
 ```
 $ nix develop
-$ clang++ -std=c++26 -freflection src/basic-refl.cpp
+$ clang++ -std=c++26 -stdlib=libc++ -freflection src/basic-refl.cpp
+$ clang++ -std=c++26 -stdlib=libc++ -freflection-latest -L/nix/store/hf1rkb0a4m2a7rn71cqw9bh6bc80qklm-simdjson-4.2.4/lib -lsimdjson src/json-refl.cpp
 ```
