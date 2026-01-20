@@ -2,7 +2,7 @@
     description = "Test C++26 p2996 flake for development";
 
     inputs = {
-        nixpkgs.url  = github:cadkin/nixpkgs/p2996;
+        nixpkgs.url  = github:alibabashack/nixpkgs/p2996-clang-22;
         utils.url    = github:numtide/flake-utils;
     };
 
@@ -17,7 +17,7 @@
 
             # LLDB is currently broken on Bloomberg's fork, but we can use LLVM 19's LLDB.
             # https://github.com/bloomberg/clang-p2996/pull/24
-            lldb   = pkgs.llvmPackages_19.lldb;
+            #lldb   = pkgs.llvmPackages_19.lldb;
         };
 
         devShells = with config; rec {
@@ -29,7 +29,7 @@
 
                 packages = [
                     llvm.clang-tools
-                    lldb
+                    llvm.lldb
                 ] ++ pkgs.lib.optionals (stdenv.hostPlatform.isLinux) [
                     pkgs.cntr
                 ];
